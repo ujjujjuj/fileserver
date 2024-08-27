@@ -1,0 +1,15 @@
+extends layout.pug
+
+
+block content
+  form(action="/upload", method="post", autocomplete="off", enctype="multipart/form-data")
+    input(autocomplete="false", style="display:none;")
+    input(type="text", placeholder="name", name="name")
+    input(type="file", placeholder="file", name="file", id="file" style="display:none;")
+    label(for="file") Choose File
+
+    button.big(type="submit") Upload
+
+  if error
+    div(style="relative")
+      p.error= error

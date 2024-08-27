@@ -1,0 +1,14 @@
+extends layout.pug
+
+
+block content
+  if files.length === 0
+    div(style="relative")
+      p.error no files
+  ul
+    each file in files
+      li
+        a(href=`/${file}`) #{file}
+        if isAdmin
+            a(href=`/delete/${file}`)
+                button.smol -x-

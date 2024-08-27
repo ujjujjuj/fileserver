@@ -1,0 +1,13 @@
+extends layout.pug
+
+
+block content
+  form(action="/login", method="post", autocomplete="off")
+    input(autocomplete="false", style="display:none;")
+    input(type="text", placeholder="username", name="username")
+    input(type="password", placeholder="password", name="password")
+    button.big(type="submit") Login
+
+  if error
+    div(style="relative")
+      p.error= error
