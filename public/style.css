@@ -33,7 +33,6 @@ input {
   color: var(--bg);
   outline: none;
   border: none;
-  border-radius: 5px;
 }
 
 button {
@@ -44,12 +43,11 @@ button {
 }
 
 button.big {
+  margin-top: 2rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
 
   color: white;
-  font-weight: bold;
-  border-radius: 5px;
 }
 
 .error {
@@ -80,7 +78,8 @@ label {
   background-color: var(--fg);
   color: white;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 5px;
   cursor: pointer;
 }
