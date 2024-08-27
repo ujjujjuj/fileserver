@@ -2,7 +2,6 @@ import "dotenv/config"
 import express from "express"
 import session from "express-session"
 import crypto from "crypto"
-import fileUpload from "express-fileupload"
 
 import authRouter from "./routes/auth"
 import uploadRouter from "./routes/upload"
@@ -31,13 +30,6 @@ if (app.get("env") === "production") {
 app.use(session(sess))
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: false }))
-app.use(
-  fileUpload({
-    limits: { fileSize: 32 * 1024 * 1024 },
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  })
-)
 
 app.use("/", authRouter)
 app.use("/", uploadRouter)
